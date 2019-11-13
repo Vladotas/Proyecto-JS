@@ -16,13 +16,17 @@
         <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()" >Start</button>
     </div>
 </body>
+<<<<<<< HEAD
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" ></script>
+=======
+>>>>>>> 393bf6e6dc66f8f627df0172f86c3c188e379643
 <script>
 const celeste = document.getElementById('Celeste');
 const violeta = document.getElementById('Violeta');
 const naranja = document.getElementById('Naranja'); 
 const verde = document.getElementById('Verde');
 const btnEmpezar = document.getElementById('btnEmpezar');
+<<<<<<< HEAD
 const ULTIMO_NIVEL = 1;
 
 class Juego{
@@ -36,6 +40,18 @@ class Juego{
     this.siguienteNivel = this.siguienteNivel.bind(this)
     this.elegirColor = this.elegirColor.bind(this)  
     this.toggleBtnEmpezar() //Elimina boton usando el .hide creado en el css
+=======
+
+class Juego{
+    constructor(){
+        this.iniciar()
+        this.generarSecuencia()
+        this.siguienteNivel()
+    }
+    iniciar(){
+    this.elegirColor = this.elegirColor.bind(this)  
+    btnEmpezar.classList.add('hide'); //Elimina boton usando el .hide creado en el css
+>>>>>>> 393bf6e6dc66f8f627df0172f86c3c188e379643
     this.nivel = 1;
     this.colores = {
     celeste, //Esto es lo mismo que celsete : celeste.
@@ -44,6 +60,7 @@ class Juego{
     verde
 }
     }
+<<<<<<< HEAD
 
 
     toggleBtnEmpezar(){
@@ -56,11 +73,18 @@ class Juego{
 
     generarSecuencia(){
         this.secuencia = new Array(ULTIMO_NIVEL).fill(0).map(n=> Math.floor(Math.random()*4));
+=======
+    generarSecuencia(){
+        this.secuencia = new Array(10).fill(0).map(n=> Math.floor(Math.random()*4));
+>>>>>>> 393bf6e6dc66f8f627df0172f86c3c188e379643
     }
 
     siguienteNivel(){
         this.subNivel = 0
+<<<<<<< HEAD
         this.nombreAtributo = 'valor'
+=======
+>>>>>>> 393bf6e6dc66f8f627df0172f86c3c188e379643
         this.ilumunarSecuencia()
         this.agregarEventosClick()
     }
@@ -125,6 +149,7 @@ const colores = this.transformarNumeroAColor(this.secuencia[i])
         this.colores.verde.addEventListener('click',this.elegirColor)
     }
 
+<<<<<<< HEAD
     eliminarEventosClick(){
         this.colores.celeste.removeEventListener('click',this.elegirColor)
         this.colores.violeta.removeEventListener('click',this.elegirColor)
@@ -162,6 +187,12 @@ const colores = this.transformarNumeroAColor(this.secuencia[i])
             this.eliminarEventosClick()
             this.iniciar()
         })
+=======
+    elegirColor(ev){
+        const nombreColor = ev.target.dataset.color
+        const numeroColor = transformarColorANumero(nombreColor)
+        this.iluminarColor(nomeroColor)
+>>>>>>> 393bf6e6dc66f8f627df0172f86c3c188e379643
     }
 }
 
